@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "baseline_passed": 547,
+  "baseline_reused": true,
+  "rounds": [
+    {
+      "round": 0,
+      "label": "initial",
+      "passed": 553,
+      "pass_at_1": 0.7181818181818181,
+      "tds": 0.6896359350485636,
+      "rescued": 17,
+      "regressed": 11,
+      "net_gain": 6,
+      "record_level_mcnemar_p": 0.34492845088243484,
+      "avg_final_generation_cost_usd": 0.0008866228571428572
+    },
+    {
+      "round": 1,
+      "label": "repeat_1",
+      "passed": 555,
+      "pass_at_1": 0.7207792207792207,
+      "tds": 0.6921300975623015,
+      "rescued": 20,
+      "regressed": 12,
+      "net_gain": 8,
+      "record_level_mcnemar_p": 0.21532714972272515,
+      "avg_final_generation_cost_usd": 0.0008912337662337663
+    },
+    {
+      "round": 2,
+      "label": "repeat_2",
+      "passed": 551,
+      "pass_at_1": 0.7155844155844155,
+      "tds": 0.6871417725348257,
+      "rescued": 12,
+      "regressed": 8,
+      "net_gain": 4,
+      "record_level_mcnemar_p": 0.5034446716308594,
+      "avg_final_generation_cost_usd": 0.0008903548051948054
+    },
+    {
+      "round": 3,
+      "label": "repeat_3",
+      "passed": 543,
+      "pass_at_1": 0.7051948051948052,
+      "tds": 0.677165122479874,
+      "rescued": 15,
+      "regressed": 19,
+      "net_gain": -4,
+      "record_level_mcnemar_p": 0.6075913612730801,
+      "avg_final_generation_cost_usd": 0.0008950675324675326
+    }
+  ],
+  "mean_passed": 550.5,
+  "min_passed": 543,
+  "max_passed": 555,
+  "sample_stdev_passed": 5.259911279353167,
+  "mean_pass_at_1": 0.7149350649350649,
+  "mean_tds": 0.6865182319063912,
+  "mean_net_gain_vs_single_baseline": 3.5,
+  "limitations": [
+    "Four runs describe sampling variability on this fixed validation set and frozen historical QA, not end-to-end clarification variability.",
+    "Only one historical baseline run; baseline variability is not estimated.",
+    "Do not pool 4x770 correlated observations as independent tasks.",
+    "No prompt revisions from validation outcomes."
+  ]
+}

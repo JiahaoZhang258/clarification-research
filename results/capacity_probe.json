@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "evaluated": 250,
+  "successful_generations": 15,
+  "recovered_instances": 6,
+  "original_instances": 50,
+  "samples_per_instance": 5,
+  "scope": "Previously failed validation instances with frozen QA; not a general pass-rate estimate."
+}

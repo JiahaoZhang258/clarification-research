@@ -1,0 +1,50 @@
+{
+  "status": "review_draft_not_evaluated",
+  "method": "human-authored concise requirements-check demonstrations; prompt distillation, no weight training",
+  "source_file": "runs/devset100/targeted_responses.jsonl",
+  "source_sha256": "3076c69df16446568d900131d2b646e63422b48fcaacf2533bd73a50b3c57c4d",
+  "prompt_file": "evidence_checked_final_v1.txt",
+  "prompt_sha256": "923759b8b75512fcfacebb3fefd1f78b5ae38f8cad750994335eb7f89cd900d7",
+  "evidence_used": "Only task prompts and existing questions/answers; no reference solutions, test cases, test outcomes, or judge ratings used in constructing demonstrations. Task excerpts are abbreviated; examples 1 and 3 preserve supplied examples.",
+  "excluded_task_ids_for_future_comparison": [
+    "HumanEval/14",
+    "HumanEval/25",
+    "HumanEval/81"
+  ],
+  "paid_api_calls": 0,
+  "demonstrations": [
+    {
+      "purpose": "explicit_correction_scope",
+      "source_line": 15,
+      "task_id": "HumanEval/14",
+      "instance_id": "d02940fb141913f5418c42190e2fe6390e8cbbb0f4109b3b0325244972981481",
+      "prompt": "from typing import List\n \n \n def all_prefixes(string: str) -> List[str]:\n  \"\"\" Return list of all prefixes from shortest to longest of the input string\n  >>> all_prefixes('abc')\n  ['abc', 'ab', 'a']\n  \"\"\"",
+      "question": "I will assume all_prefixes returns prefixes from longest to shortest as shown in the example ['abc', 'ab', 'a']. Is that right, or should it return from shortest to longest as the description states?",
+      "answer": "The function should return prefixes from shortest to longest, as stated in the description."
+    },
+    {
+      "purpose": "partial_answer_unresolved_information",
+      "source_line": 4,
+      "task_id": "HumanEval/81",
+      "instance_id": "df6fc51b032c30fcc73c97925043442c16f44b1cf03798ab6108afebea5772fa",
+      "prompt": "def numerical_letter_grade(grades):\n  \"\"\"It is the last week of the semester and the teacher has to give the grades\n  to students. The teacher has been making her own algorithm for grading.\n  The only problem is, she has lost the code she used for grading.\n  She has given you a list of GPAs for some students and you have to write \n  a function that can output a list of percentage or letter grades using the following table:\n  \"\"\"",
+      "question": "I will assume the function returns \"100%\" only for a GPA of 4.0 and letter grades for all other GPAs. Is that right, or should the function return percentage grades for other GPAs as well?",
+      "answer": "The function should return letter grades for all GPAs, including 4.0, and not percentage grades."
+    },
+    {
+      "purpose": "public_example_consistency",
+      "source_line": 38,
+      "task_id": "HumanEval/25",
+      "instance_id": "c585683b37bd82268914a6b7f46d87e3783b07013d13c1c5aae156a841b09dc6",
+      "prompt": "def decompose(value):\n    \"\"\" Return a list of factors of the given integer in a loose ascending order.\n    Each factor should appear as many times as it occurs in the decomposition.\n    The input should amount to the product of those factors.\n    >>> decompose(8)\n    [2, 2, 2]\n    >>> decompose(25)\n    [5, 5]\n    >>> decompose(70)\n    [2, 5, 7]\n    \"\"\"",
+      "question": "I will assume the input to factorize is always a positive integer greater than 1. Is that right, or should the function handle 1, 0, or negative integers differently?",
+      "answer": "The function should only handle positive integers greater than 1 as input; other values do not need to be handled."
+    }
+  ],
+  "limits": [
+    "Not a validated improvement.",
+    "No claim of superior teacher-generated trajectories or measured transfer.",
+    "Real recorded answers may be incomplete; demonstrations deliberately preserve that limitation.",
+    "Grade-table example illustrates uncertainty handling, not a complete correct solution."
+  ]
+}

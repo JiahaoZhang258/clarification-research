@@ -1,0 +1,109 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "split": "validation",
+  "organizer_confirmed": false,
+  "experiments": [
+    {
+      "id": "baseline",
+      "scope": "full_pipeline",
+      "count": 770,
+      "passed": 534,
+      "pass_at_1": 0.6935064935064935,
+      "tds": 0.6659413911680534,
+      "ndcg": 0.9155844155844156,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_solver_cost_usd": 0.0009445153246753248
+    },
+    {
+      "id": "original_cot",
+      "scope": "full_pipeline",
+      "count": 770,
+      "passed": 547,
+      "pass_at_1": 0.7103896103896103,
+      "tds": 0.6821534475073499,
+      "ndcg": 0.9025974025974026,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_solver_cost_usd": 0.001502188051948052
+    },
+    {
+      "id": "fewshot_cot",
+      "scope": "full_pipeline",
+      "count": 770,
+      "passed": 543,
+      "pass_at_1": 0.7051948051948052,
+      "tds": 0.677165122479874,
+      "ndcg": 0.912987012987013,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_solver_cost_usd": 0.001619703376623377
+    },
+    {
+      "id": "draft_patch",
+      "scope": "full_pipeline",
+      "count": 770,
+      "passed": 513,
+      "pass_at_1": 0.6662337662337663,
+      "tds": 0.6397526847738038,
+      "ndcg": 0.9,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_solver_cost_usd": 0.0009710748051948053
+    },
+    {
+      "id": "distilled_initial",
+      "scope": "fixed_historical_qa",
+      "count": 770,
+      "passed": 553,
+      "pass_at_1": 0.7181818181818181,
+      "tds": 0.6896359350485636,
+      "ndcg": 0.9025974025974026,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_final_generation_cost_usd": 0.0008866228571428572
+    },
+    {
+      "id": "distilled_repeat_1",
+      "scope": "fixed_historical_qa",
+      "count": 770,
+      "passed": 555,
+      "pass_at_1": 0.7207792207792207,
+      "tds": 0.6921300975623015,
+      "ndcg": 0.9025974025974026,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_final_generation_cost_usd": 0.0008912337662337663
+    },
+    {
+      "id": "distilled_repeat_2",
+      "scope": "fixed_historical_qa",
+      "count": 770,
+      "passed": 551,
+      "pass_at_1": 0.7155844155844155,
+      "tds": 0.6871417725348257,
+      "ndcg": 0.9025974025974026,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_final_generation_cost_usd": 0.0008903548051948054
+    },
+    {
+      "id": "distilled_repeat_3",
+      "scope": "fixed_historical_qa",
+      "count": 770,
+      "passed": 543,
+      "pass_at_1": 0.7051948051948052,
+      "tds": 0.677165122479874,
+      "ndcg": 0.9025974025974026,
+      "clarification_rate": 1.0,
+      "overasking_rate": 1.0,
+      "average_final_generation_cost_usd": 0.0008950675324675326
+    }
+  ],
+  "limitations": [
+    "Local results, not official confirmed scores.",
+    "Distilled runs reuse original CoT QA and one historical baseline.",
+    "Do not pool repeats as independent tasks.",
+    "Solver cost and final-generation-only cost are different scopes."
+  ]
+}

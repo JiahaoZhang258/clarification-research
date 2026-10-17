@@ -1,0 +1,34 @@
+{
+  "complete": true,
+  "paired_records": 97,
+  "metrics": {
+    "cot": {
+      "evaluated": 97,
+      "passed": 65,
+      "pass_at_1": 0.6701030927835051,
+      "tds": 0.6434682155287963,
+      "ndcg": 0.979381443298969,
+      "clarification_rate": 1.0,
+      "avg_final_generation_cost_usd": 0.0009376536082474227
+    },
+    "distilled": {
+      "evaluated": 97,
+      "passed": 65,
+      "pass_at_1": 0.6701030927835051,
+      "tds": 0.6434682155287963,
+      "ndcg": 0.979381443298969,
+      "clarification_rate": 1.0,
+      "avg_final_generation_cost_usd": 0.0010250103092783506
+    }
+  },
+  "rescued": 3,
+  "regressed": 3,
+  "net_gain": 0,
+  "exact_mcnemar_p": 1.0,
+  "limitations": [
+    "Train development set; not official validation score.",
+    "Fixed QA means question-quality metrics cannot measure a prompt improvement.",
+    "Cost metric is final generation only, not leaderboard total solver cost.",
+    "Some records share original task IDs; exact McNemar p is a record-level exploratory calculation, not independent-task confirmation."
+  ]
+}

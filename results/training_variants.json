@@ -1,0 +1,180 @@
+{
+  "experiment": "devset100_question_selection",
+  "targeted": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 67,
+    "pass_at_1": 0.67,
+    "tds": 0.643369220418715,
+    "ndcg": 0.98,
+    "asked_tasks": 100,
+    "quality_3_questions": 98,
+    "prompt_cost_usd": 0.1094968,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 30
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 37
+      }
+    }
+  },
+  "interface": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 63,
+    "pass_at_1": 0.63,
+    "tds": 0.6049591177071499,
+    "ndcg": 0.9,
+    "asked_tasks": 100,
+    "quality_3_questions": 90,
+    "prompt_cost_usd": 0.0741036,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 33
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 30
+      }
+    }
+  },
+  "final3": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 65,
+    "pass_at_1": 0.65,
+    "tds": 0.6241641690629325,
+    "ndcg": 0.99,
+    "asked_tasks": 100,
+    "quality_3_questions": 99,
+    "prompt_cost_usd": 0.201888,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 30
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 35
+      }
+    }
+  },
+  "repair": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 63,
+    "pass_at_1": 0.63,
+    "tds": 0.6049591177071499,
+    "ndcg": 0.98,
+    "asked_tasks": 100,
+    "quality_3_questions": 98,
+    "prompt_cost_usd": 0.18481200000000003,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 29
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 34
+      }
+    }
+  },
+  "cot": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 62,
+    "pass_at_1": 0.62,
+    "tds": 0.5953565920292586,
+    "ndcg": 0.98,
+    "asked_tasks": 100,
+    "quality_3_questions": 98,
+    "prompt_cost_usd": 0.1468328,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 29
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 33
+      }
+    }
+  },
+  "multi_first": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 56,
+    "pass_at_1": 0.56,
+    "tds": 0.5377414379619111,
+    "ndcg": 0.98,
+    "asked_tasks": 100,
+    "quality_3_questions": 98,
+    "prompt_cost_usd": 0.10392440000000001,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 28
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 28
+      }
+    }
+  },
+  "multi_jev": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 63,
+    "pass_at_1": 0.63,
+    "tds": 0.6049591177071499,
+    "ndcg": 0.98,
+    "asked_tasks": 100,
+    "quality_3_questions": 98,
+    "prompt_cost_usd": 0.10593440200000001,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 31
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 32
+      }
+    }
+  },
+  "targeted_jev": {
+    "generated": 100,
+    "evaluated": 100,
+    "count": 100,
+    "passed": 62,
+    "pass_at_1": 0.62,
+    "tds": 0.5953565920292586,
+    "ndcg": 0.97,
+    "asked_tasks": 100,
+    "quality_3_questions": 97,
+    "prompt_cost_usd": 0.21016268000000002,
+    "by_dataset": {
+      "HumanEval": {
+        "n": 45,
+        "passed": 29
+      },
+      "Mbpp": {
+        "n": 55,
+        "passed": 33
+      }
+    }
+  },
+  "notes": "Dev set drawn from the train split; hidden requirements come from reference_prompt, not the curated clarifications.jsonl used by validation. Directional probe, one sample per task; not a validation leaderboard result."
+}

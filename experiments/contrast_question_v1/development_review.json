@@ -1,0 +1,37 @@
+{
+  "scope": "Review of existing train development failures only; no validation cases or hidden test outputs used to construct the question prompt.",
+  "source": "runs/devset100/targeted_results.jsonl",
+  "cases": [
+    {
+      "task_id": "HumanEval/81",
+      "observation": "The prompt refers to an absent grading table. The question resolved letter versus percentage output; the final code still invented grade thresholds.",
+      "rule": "Prioritize an explicitly missing behavioral mapping over a secondary representation choice. A full table may violate atomicity, so ask about one consequential missing rule, not the whole specification."
+    },
+    {
+      "task_id": "HumanEval/141",
+      "observation": "The prompt leaves usual file endings unspecified. The question resolved digit-count scope; the final code invented a large allowed-extension set.",
+      "rule": "Prefer an unresolved membership rule over a peripheral detail. Example alternatives must not imply that guessed categories are exhaustive."
+    },
+    {
+      "task_id": "Mbpp/61",
+      "observation": "The question resolved word length, but the final code interpreted total of digits as number of digit characters.",
+      "rule": "Use an example whose outputs distinguish the underlying operation, such as digit sum versus digit count, before secondary definitions."
+    },
+    {
+      "task_id": "Mbpp/359",
+      "observation": "The task asks to check properties of roots without specifying what the result means. The question asked coefficient types, and the code invented a pair of Boolean result fields.",
+      "rule": "Resolve return meaning or structure before input-domain refinements when the main operation is missing."
+    },
+    {
+      "task_id": "HumanEval/158",
+      "observation": "There are conflicting return statements and tie-break examples. The old question asked about the return type, which the simulator rated quality 1, and did not resolve tie ordering.",
+      "rule": "Locate a material conflict and illustrate competing behaviors with one distinguishing valid input. Do not infer correctness merely from the simulator quality score."
+    }
+  ],
+  "limitations": [
+    "These are observed gaps, not causal proof that a different question rescues the task.",
+    "Some tasks contain several missing facts; a one-turn atomic question may not be sufficient.",
+    "No task-specific examples or expected outputs are embedded in the new prompt.",
+    "All prior development original task IDs and the three earlier demonstration IDs are excluded from the new comparison."
+  ]
+}

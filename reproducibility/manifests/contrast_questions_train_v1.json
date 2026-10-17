@@ -1,0 +1,760 @@
+{
+  "experiment": "contrast_questions_train_v1",
+  "split": "train",
+  "seed": 1017,
+  "count": 100,
+  "rounds": 3,
+  "arms": [
+    "baseline",
+    "contrast"
+  ],
+  "model": "openai/gpt-4.1-mini",
+  "temperature": 0.7,
+  "oracle_temperature": 0.0,
+  "max_clarification_turns": 1,
+  "cumulative_budget_usd": 14.0,
+  "sampling": "45 HumanEval + 55 Mbpp original IDs; one random variant per ID",
+  "excluded_original_task_ids": [
+    "HumanEval/1",
+    "HumanEval/100",
+    "HumanEval/101",
+    "HumanEval/102",
+    "HumanEval/104",
+    "HumanEval/106",
+    "HumanEval/110",
+    "HumanEval/111",
+    "HumanEval/112",
+    "HumanEval/114",
+    "HumanEval/123",
+    "HumanEval/127",
+    "HumanEval/130",
+    "HumanEval/132",
+    "HumanEval/138",
+    "HumanEval/14",
+    "HumanEval/140",
+    "HumanEval/141",
+    "HumanEval/144",
+    "HumanEval/146",
+    "HumanEval/147",
+    "HumanEval/148",
+    "HumanEval/154",
+    "HumanEval/155",
+    "HumanEval/157",
+    "HumanEval/158",
+    "HumanEval/2",
+    "HumanEval/21",
+    "HumanEval/24",
+    "HumanEval/25",
+    "HumanEval/26",
+    "HumanEval/31",
+    "HumanEval/34",
+    "HumanEval/35",
+    "HumanEval/41",
+    "HumanEval/52",
+    "HumanEval/59",
+    "HumanEval/67",
+    "HumanEval/68",
+    "HumanEval/71",
+    "HumanEval/77",
+    "HumanEval/78",
+    "HumanEval/79",
+    "HumanEval/81",
+    "HumanEval/85",
+    "HumanEval/89",
+    "HumanEval/9",
+    "HumanEval/90",
+    "HumanEval/92",
+    "HumanEval/94",
+    "HumanEval/96",
+    "Mbpp/108",
+    "Mbpp/12",
+    "Mbpp/126",
+    "Mbpp/127",
+    "Mbpp/132",
+    "Mbpp/14",
+    "Mbpp/153",
+    "Mbpp/157",
+    "Mbpp/17",
+    "Mbpp/18",
+    "Mbpp/185",
+    "Mbpp/244",
+    "Mbpp/30",
+    "Mbpp/308",
+    "Mbpp/31",
+    "Mbpp/312",
+    "Mbpp/327",
+    "Mbpp/332",
+    "Mbpp/333",
+    "Mbpp/347",
+    "Mbpp/359",
+    "Mbpp/363",
+    "Mbpp/37",
+    "Mbpp/373",
+    "Mbpp/396",
+    "Mbpp/397",
+    "Mbpp/404",
+    "Mbpp/405",
+    "Mbpp/41",
+    "Mbpp/424",
+    "Mbpp/442",
+    "Mbpp/461",
+    "Mbpp/462",
+    "Mbpp/468",
+    "Mbpp/469",
+    "Mbpp/484",
+    "Mbpp/485",
+    "Mbpp/538",
+    "Mbpp/603",
+    "Mbpp/608",
+    "Mbpp/61",
+    "Mbpp/611",
+    "Mbpp/621",
+    "Mbpp/623",
+    "Mbpp/648",
+    "Mbpp/657",
+    "Mbpp/658",
+    "Mbpp/665",
+    "Mbpp/671",
+    "Mbpp/676",
+    "Mbpp/689",
+    "Mbpp/696",
+    "Mbpp/699",
+    "Mbpp/710",
+    "Mbpp/726",
+    "Mbpp/765",
+    "Mbpp/772",
+    "Mbpp/775",
+    "Mbpp/79",
+    "Mbpp/790",
+    "Mbpp/802",
+    "Mbpp/832",
+    "Mbpp/841",
+    "Mbpp/857",
+    "Mbpp/886",
+    "Mbpp/901",
+    "Mbpp/903",
+    "Mbpp/921",
+    "Mbpp/934",
+    "Mbpp/935",
+    "Mbpp/950",
+    "Mbpp/951",
+    "Mbpp/968"
+  ],
+  "prior_manifest_sha256": {
+    "devset100": "0fd5541e3e907b6102a843daab97555738554b432cc95a65e2fad5d57b3ae23f",
+    "methods34": "47f63faf8694e0c04dfd521ce09099b115f1e270710eb4736af13117b4474642"
+  },
+  "algorithm_sha256": "03c2b6ad951c94df5cd44f276388d7d47863ce61d5956f1dc48d3e517a0b5663",
+  "runner_sha256": "d084cd412e90c2ec2e4c236f22eb637a18e79613433049c0c542a13afcdc287c",
+  "base_source_sha256": "8295ce0d907664506b9e7795aadbc71b78586516f139de75f9b9aef2db065612",
+  "final_prompt_sha256": "aa2fe014bd54c58f4e7862519a166dc50215e054bc710493ebb1aca281637e63",
+  "contrast_prompt_sha256": "6f7ca8960fc690e946797cd089bfc3d51d13ffcd322648248d5a2cabe23584ee",
+  "selected_tasks_sha256": "b47b208a4f4c4296aaa3bacdde3b0904708584f0570e078390c422fd62abac3e",
+  "development_review_sha256": "081258f6dc8ac520bd886b368709ed7e2e58ea76bf92dd8f2b8fdfca505e3851",
+  "tasks": [
+    {
+      "instance_id": "bfe23c2dd585c8badc0dd46aa12e7a8042dd104bdfb6cf13987469d997e0d36c",
+      "task_id": "HumanEval/118",
+      "prompt": "TASK:\n\ndef get_closest_vowel(word):\n    \"\"\"You are given a word. Your task is to find the closest vowel that stands between \n    two consonants from the right side of the word.\n    \n    Vowels in the beginning and ending doesn't count. Return empty string if you didn't\n    find any vowel met the above condition. \n\n    You may assume that the given string contains English letter only.\n\n    Example:\n    get_closest_vowel(\"yogurt\") ==> \"u\"\n    get_closest_vowel(\"FULL\") ==> \"U\"\n    get_closest_vowel(\"quick\") ==> \"\"\n    get_closest_vowel(\"ab\") ==> \"\"\n    \"\"\"\n",
+      "entry_point": "get_closest_vowel"
+    },
+    {
+      "instance_id": "0ce3934bac9b05d5569859d63c0023288db3ccb8912b2ac11063297f1a0abf8e",
+      "task_id": "Mbpp/761",
+      "prompt": "Write a routine to caluclate length along an arc of an angle.\n",
+      "entry_point": "arc_length"
+    },
+    {
+      "instance_id": "38934b2c7725763a34083231f866eabf30c54d7fb1d1a3fedb822ab2f7244e71",
+      "task_id": "Mbpp/660",
+      "prompt": "```Write a pyhton function to choose points from two ranges such that no point lies in both the ranges\n",
+      "entry_point": "find_Points"
+    },
+    {
+      "instance_id": "f38ad35a95d8527c2d06c7a90cf361a547bb35f556c5f500dae8d00e41c0d602",
+      "task_id": "HumanEval/13",
+      "prompt": "def greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n",
+      "entry_point": "greatest_common_divisor"
+    },
+    {
+      "instance_id": "dbd69570255feeab1abec825601564fb702c67007020eba06463a20a5b3eb01b",
+      "task_id": "Mbpp/34",
+      "prompt": "Write a python function to find the missing number in a sorted array.\n",
+      "entry_point": "find_missing"
+    },
+    {
+      "instance_id": "3ecc0fbb2f3c76a0809c05a6674acd2212dc99741d8e4bca714f318fae1a5afb",
+      "task_id": "Mbpp/257",
+      "prompt": "Write a function to swap numbers.\n",
+      "entry_point": "swap_numbers"
+    },
+    {
+      "instance_id": "6e77b74fbf918b232d99ab125f8654b476e5aaf120c3e16d4f33f07ae752583e",
+      "task_id": "HumanEval/5",
+      "prompt": "from typing import List\n \n \n def candidate(numbers: List[int], x: int) -> List[int]:\n  \"\"\" Insert a number 'x' for a certain number of times in the input list `numbers'\n  >>> candidate([], 4)\n  []\n  >>> candidate([1, 2, 3], 4)\n  [1, 4, 2, 4, 3]\n  \"\"\"",
+      "entry_point": "intersperse"
+    },
+    {
+      "instance_id": "136d832dd10a0b299c7f7cac9328a2d47522011d3a67833db1785063612071b1",
+      "task_id": "Mbpp/690",
+      "prompt": "`Write a function to multply consecutive numbers of a given list\n",
+      "entry_point": "mul_consecutive_nums"
+    },
+    {
+      "instance_id": "9794456cab117dfce22551765cffa0b8d76e90adcc964797f2c7d576d2a85102",
+      "task_id": "Mbpp/882",
+      "prompt": "Write a function to caluclate perimeter of a parallelogram.\n",
+      "entry_point": "parallelogram_perimeter"
+    },
+    {
+      "instance_id": "5bc47b98ba848b5c0625504e20987c1ef7d899753168ea45bb2ad5ac0b2de891",
+      "task_id": "HumanEval/48",
+      "prompt": "\n\ndef is_palindrome(text: str):\n    \"\"\"\n    Checks if given string is a palindrome\n    >>> is_palindrome('')\n    True\n    >>> is_palindrome('aba')\n    True\n    >>> is_palindrome('aaaaa')\n    True\n    >>> is_palindrome('zbcd')\n    False\n    \"\"\"\n",
+      "entry_point": "is_palindrome"
+    },
+    {
+      "instance_id": "71fe3ac7ee7289f3d36a337d8d28037ee60c45e147e719a1ec19aebd8ab077ed",
+      "task_id": "Mbpp/256",
+      "prompt": "```python\nWrite a pythn function to count the number of prime numbers less than a given non-negative number\n",
+      "entry_point": "count_Primes_nums"
+    },
+    {
+      "instance_id": "b78275ae084bc7a9682ee13178027ba6f491cd0ad28448ab34b00524fb087772",
+      "task_id": "Mbpp/172",
+      "prompt": "Write a function to count occurrences of the substring 'std' in a string, where overlapping occurrences must both be counted and excluded from the count.\n",
+      "entry_point": "count_occurance"
+    },
+    {
+      "instance_id": "5fe66d82ed5ef83f9eb36d13c17524e95f80ccb0f092c63b3adc6c9065baaa7a",
+      "task_id": "HumanEval/46",
+      "prompt": "def fib4(n: int):\n  \"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\n  fib4(0) -> 0\n  fib4(1) -> 0\n  fib4(2) -> 2\n  fib4(3) -> 0\n  fib4(n) -> fib4(n-1) +/- fib4(n-2) +/- fib4(n-3) +/- fib4(n-4).\n  Please write a function to efficiently compute the n-th element of the fib4 number sequence. Do not use recursion.\n  >>> fib4(5)\n  2\n  >>> fib4(6)\n  4\n  >>> fib4(7)\n  6\n  \"\"\"",
+      "entry_point": "fib4"
+    },
+    {
+      "instance_id": "a3c44684ba93f12266dd14417cb4ebfb08adb877f27d609f0709683bf0ece91d",
+      "task_id": "Mbpp/628",
+      "prompt": "Write a function to replace all spaces in the given string with character * list item * list item * list item * list item '%20'.\n",
+      "entry_point": "replace_spaces"
+    },
+    {
+      "instance_id": "2521984d708f4e352d943f58ba92dd6c6ac369f1222cd1c6f80311a26d2afee0",
+      "task_id": "Mbpp/136",
+      "prompt": "Write a function to estimate a utility bill.\n",
+      "entry_point": "cal_electbill"
+    },
+    {
+      "instance_id": "b511c71190f3485d87180842897cc791866e01a30988195a285031c5fe359b4f",
+      "task_id": "HumanEval/152",
+      "prompt": "def compare(game,guess):\n    \"\"\"I think we all remember that feeling when the result of some long-awaited\n    event is finally known. The feelings and thoughts you have at that moment are\n    definitely worth noting down and comparing.\n    Your task is to determine if a person correctly guessed the results of a number of matches.\n    You are given two arrays of scores and guesses of equal length, where each index shows a match. \n    Return an array of the same length denoting how far off each guess was. If they have guessed correctly,\n    the value is 0, and if not, the value is the absolute difference between the guess and the score. However,\n    instead of returning an array, return a string representation of the array without using any in-built functions or libraries. \n\n    example:\n\n    compare([1,2,3,4,5,1],[1,2,3,4,2,-2]) -> \"[0,0,0,0,3,3]\" \n    compare([0,5,0,0,0,4],[4,1,1,0,0,-2]) -> \"[4,4,1,0,0,6]\"\n    \"\"\"\n    The function should not use any loops, recursion, or iterative constructs. It should also not have a time complexity greater than O(1).",
+      "entry_point": "compare"
+    },
+    {
+      "instance_id": "98195b40ace1fc9d989f142704feb694986f197fa17db9720a99c78bfc2f331e",
+      "task_id": "Mbpp/959",
+      "prompt": "Write a python function `Average` that returns the average of a list.\n",
+      "entry_point": "Average"
+    },
+    {
+      "instance_id": "920bc6dc6d015a883489a105886639e169eac27649e4654da1b48be13cc38b7b",
+      "task_id": "HumanEval/151",
+      "prompt": "def double_the_difference(lst):\n  '''\n  Given a list of numbers, return the sum of squares of the numbers\n  in the list that are \n  \n  double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n  double_the_difference([-1, -2, 0]) == 0\n  double_the_difference([9, -2]) == 81\n  double_the_difference([0]) == 0 \n  \n  If the input list is empty, return 0.\n  '''",
+      "entry_point": "double_the_difference"
+    },
+    {
+      "instance_id": "14d73997a5ab17bdc65d38ff74e98c79b96f3ce6731df859d295e031ca8ce626",
+      "task_id": "HumanEval/58",
+      "prompt": "def candidate(l1: list, l2: list):\n  \"\"\"Return common.\n  >>> candidate([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n  [653, 5, 1]\n  >>> candidate([5, 3, 2, 8], [3, 2])\n  [3, 2]\n \n  \"\"\"",
+      "entry_point": "common"
+    },
+    {
+      "instance_id": "c7bafd9e767d734270473ac976792802097a6ce86d5a050adea9f0ef66858256",
+      "task_id": "HumanEval/70",
+      "prompt": "def candidate(lst):\n  '''\n  Given list of integers, return list in a certain order (ascending, strange or another).\n  Strange sorting, is when you start with the minimum value,\n  then maximum of the remaining integers, then minimum and so on.\n \n  Examples:\n  candidate([1, 2, 3, 4]) == [1, 4, 2, 3]\n  candidate([5, 5, 5, 5]) == [5, 5, 5, 5]\n  candidate([]) == []\n  '''",
+      "entry_point": "strange_sort_list"
+    },
+    {
+      "instance_id": "5c0160ff558e3048a33ec1578da825e18f2b7885448952b17e05b85c92721603",
+      "task_id": "HumanEval/99",
+      "prompt": "TASK:\n\ndef closest_integer(value):\n    '''\n    Create a function that takes a value representing a number\n    and returns the closest integer to it. If the number is equidistant\n    from two integers, round it away from zero.\n\n    Examples\n    >>> closest_integer(\"10\")\n    10\n    >>> closest_integer(\"15.3\")\n    15\n\n    Note:\n    Rounding away from zero means that if the given number is equidistant\n    from two integers, the one you should return is the one that is the\n    farthest from zero. For example closest_integer(\"14.5\") should\n    return 15 and closest_integer(\"-14.5\") should return -15.\n    '''\n",
+      "entry_point": "closest_integer"
+    },
+    {
+      "instance_id": "c697106d367a4ef32b563fcff3576755d00b042e2848c5f33fa578df8de0753f",
+      "task_id": "Mbpp/243",
+      "prompt": "Write a function to sort the list based on first element of tuples, but sort by the last element instead.\n",
+      "entry_point": "sort_on_occurence"
+    },
+    {
+      "instance_id": "aaa7044f8dd8ab390ee269f3b9f49a55eb1589c42ebcca7a521d18211cdf26a7",
+      "task_id": "HumanEval/93",
+      "prompt": "def process(content):\n    \"\"\"\n    Create a routine that accepts some input and transforms it in a way that letter casing is generally altered and vowels are replaced by the character a couple positions later in the English alphabet. Assume the input consists only of letters. \n    \n    Examples:\n    >>> process('test')\n    'TGST'\n    >>> process('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"",
+      "entry_point": "encode"
+    },
+    {
+      "instance_id": "29e83cf28f950d5daf3d51526cbedff04438002d92a0c85c78563b1b4022687b",
+      "task_id": "HumanEval/16",
+      "prompt": "Come up with a way to figure out how many different letters show up in a word, treating big and small versions of the same letter as the same thing.",
+      "entry_point": "count_distinct_characters"
+    },
+    {
+      "instance_id": "cd7d4b8ec28821b73bd03bd4fcdb9812d68a8cbdf6da3c828974bc6ba98e2699",
+      "task_id": "Mbpp/568",
+      "prompt": "Write a function to create a list of items.\n",
+      "entry_point": "empty_list"
+    },
+    {
+      "instance_id": "e7c6f61004ad6fac1d8ae2ed9e62b3f3e631b0e4fe4e6dc5301d5c6502ebaf38",
+      "task_id": "Mbpp/76",
+      "prompt": "Write a function to count shapes in a figure.\n",
+      "entry_point": "count_Squares"
+    },
+    {
+      "instance_id": "1708dea54c246903381b39c134ba3cf4e080b2f0fdd1ebc586599b7758d8090b",
+      "task_id": "HumanEval/29",
+      "prompt": "from typing import List\n\n\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]\n\"\"\" Flter an input list of strings only for ones that start with a given prefix.\n    >>> filter_by_prefix([], 'a')\n    []\n    \n    >>> filter_by_prefix(['abc', 'bcd', 'cde', 'array'], 'a')\n    ['abc', 'array']\n    \"\"\"\n",
+      "entry_point": "filter_by_prefix"
+    },
+    {
+      "instance_id": "c433296051c3ef4efcb2952fe5df4cd3a204a5e24e49ce03930e26bf04db0710",
+      "task_id": "Mbpp/920",
+      "prompt": "Write a function to remove all tuples with all none values in the given tuple list.\n",
+      "entry_point": "remove_tuple"
+    },
+    {
+      "instance_id": "ec9c3b60449da7864570484c8b200505450e96398dbffb44e94d457f3ce8bb21",
+      "task_id": "HumanEval/76",
+      "prompt": "def is_simple_power(x, n):\n    \"\"\"Write a function that returns true if a number x is a power of n.\n    For example:\n    is_simple_power(8, 2) => true\n    is_simple_power(3, 2) => false\n\n    \"\"\"",
+      "entry_point": "is_simple_power"
+    },
+    {
+      "instance_id": "9d5c4f918aafc11fd904ad156146b17c6aea94e1510b2ad542c49941e7abe3e4",
+      "task_id": "Mbpp/919",
+      "prompt": "Write a python function to combine all elements in a list using multiplication.\n",
+      "entry_point": "multiply_list"
+    },
+    {
+      "instance_id": "76d9c26fc1ac470b7de1303b011e9f542bfee734f0d45607c037b8ce972a7d06",
+      "task_id": "HumanEval/11",
+      "prompt": "def blend_chars(first, second):\n    \"\"\" Inputs are two text pieces made up of a limited set of characters.\n    Apply an exclusive-like combine on these inputs and return the outcome as text.\n    >>> blend_chars('010', '110')\n    '100'\n    \"\"\"",
+      "entry_point": "string_xor"
+    },
+    {
+      "instance_id": "2868dcdfdbc4e9ee1a6ad2087bfea4a934a3a3329f0ecde4d87dfde160b3662a",
+      "task_id": "Mbpp/825",
+      "prompt": "Write a python function to select some entries from a group at particular positions.\n",
+      "entry_point": "access_elements"
+    },
+    {
+      "instance_id": "91073b745964563a944d9e8210439423589366bf0319831e3eb91211e763c34e",
+      "task_id": "Mbpp/182",
+      "prompt": "Write a function to find uppercase, lowercase and numeric values using regex.\n",
+      "entry_point": "find_character"
+    },
+    {
+      "instance_id": "a48da19ad438dfb1e6506330e8370fb32100cdf547be70f61145fea844af41e1",
+      "task_id": "Mbpp/767",
+      "prompt": "Write a python function to count the number of pairs.\n",
+      "entry_point": "get_Pairs_Count"
+    },
+    {
+      "instance_id": "92b52d8b6137753328fc83d0e025b4d90409c36995af6b64e9bc6769171c2cd0",
+      "task_id": "HumanEval/122",
+      "prompt": "TASK:\n\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n    \"\"\"\n",
+      "entry_point": "add_elements"
+    },
+    {
+      "instance_id": "9ed9b0b745b8188bb9e3431412bbbb52548693bf323ed6b82353bfc7e192d9ae",
+      "task_id": "Mbpp/892",
+      "prompt": "```Write a function to remove multiple spaces in a strng\n",
+      "entry_point": "remove_spaces"
+    },
+    {
+      "instance_id": "3bc218696050cd68622041cfba2f0d44251b9b52023cc65416f65070b76ae635",
+      "task_id": "HumanEval/18",
+      "prompt": "def candidate(a: str, b: str) -> int:\n  \"\"\" Find how many times a given substring can be found in the original string. Count overlaping cases.\n  >>> canidate('', 'a')\n  0\n  >>> candidate('aaa', 'a')\n  3\n  >>> candidate('aaaa', 'aa')\n  2\n  \"\"\"",
+      "entry_point": "how_many_times"
+    },
+    {
+      "instance_id": "99188637bdbc2aa8706840dd6c1f8838ca19e42d983dfb2593bad641b3fcf6f3",
+      "task_id": "HumanEval/47",
+      "prompt": "TASK:\n\n\ndef median(l: list):\n    \"\"\"Return median.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n",
+      "entry_point": "median"
+    },
+    {
+      "instance_id": "948b8562ee840b051ab04be4f5df8f1d897439768c1b6791321f97a51118e849",
+      "task_id": "Mbpp/505",
+      "prompt": "Write a function to move all zeroes to the end of the given array, but keep their order unchanged.\n",
+      "entry_point": "re_order"
+    },
+    {
+      "instance_id": "ce97570de720b809515c830abc36a1c440620b884c3f3d6ddee104d6da21771d",
+      "task_id": "HumanEval/107",
+      "prompt": "def even_odd_palindrome(n):\n    \"\"\"\n    Return a tuple that has the number of even and odd integer palindromes that fall within the range(1, n), inclusive.\n\n    Example 1:\n\n        Input: 3\n        Output: (1, 2)\n\n    Example 2:\n\n        Input: 12\n        Output: (4, 6)\n    \"\"\"",
+      "entry_point": "even_odd_palindrome"
+    },
+    {
+      "instance_id": "da6f955f9d15848f065af53a539279e2ea6cd41220905e184e73ef37d3b2e976",
+      "task_id": "HumanEval/32",
+      "prompt": "import math\n \n \n def poly(xs: list, x: float):\n  \"\"\"\n  Evaluates polynomial with coefficients xs at point x.\n  return xs[0] + xs[1] * x + xs[1] * x^2 + .... xs[n] * x^n\n  \"\"\"\n  return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])\n \n \n def candidate(xs: list):\n  \"\"\" xs are coefficients of a polynomial.\n  candidate find x such that poly(x) is positive or negative or 0.\n  candidate returns only only zero point, even if there are many.\n  Moreover, candidate only takes list xs having even number of coefficients\n  and largest non zero coefficient as it guarantees\n  a solution.\n  >>> round(candidate([1, 2]), 2) # f(x) = 1 + 2x\n  -0.5\n  >>> round(candidate([-6, 11, -6, 1]), 2) # (x - 1) * (x - 2) * (x - 3) = -6 + 11x - 6x^2 + x^3\n  1.0\n  \"\"\"",
+      "entry_point": "find_zero"
+    },
+    {
+      "instance_id": "4b906d6030cdb06c698c75e7a7d66e7d4c4e0a6e524c3bc269afba75ca434d34",
+      "task_id": "HumanEval/156",
+      "prompt": "def convert_mini_roman(val):\n    \"\"\"\n    Given a numeric input, produce a roman-style textual rendition of it,\n    and give that back in lowercase.\n    Expected range: 1 to 1000\n\n    Examples:\n    >>> convert_mini_roman(19) == 'xix'\n    >>> convert_mini_roman(152) == 'clii'\n    >>> convert_mini_roman(426) == 'cdxxvi'\n    \"\"\"",
+      "entry_point": "int_to_mini_roman"
+    },
+    {
+      "instance_id": "16f26a30b26f335b9c37bd5ff61e4a6307cb2359ce5c162b72697a2e0ca2d01a",
+      "task_id": "Mbpp/821",
+      "prompt": "Write a function to join two collections of mapped data together.\n",
+      "entry_point": "merge_dictionaries"
+    },
+    {
+      "instance_id": "03345a3ac7f373e243103a13bd97ac8761ffbdf9e9d0bba95b4de363c71a9357",
+      "task_id": "Mbpp/684",
+      "prompt": "Write a python function to count occurrences of a character in a repeated string, but always return 0.\n",
+      "entry_point": "count_Char"
+    },
+    {
+      "instance_id": "0c0baae61d4ce679ee27150a011cda5a451c242f25c8cadfa05834b21bdd12c1",
+      "task_id": "HumanEval/55",
+      "prompt": "def candidate(n: int):\n  \"\"\"\n  >>> candidate(10)\n  55\n  >>> candidate(1)\n  1\n  >>> candidate(8)\n  21\n  \"\"\"",
+      "entry_point": "fib"
+    },
+    {
+      "instance_id": "f04585e03708aa23daa7630abee2bcbd8c4dd9b87e133dce63c3687cc9833e7c",
+      "task_id": "Mbpp/583",
+      "prompt": "Write a function for nth catalan number.\n",
+      "entry_point": "catalan_number"
+    },
+    {
+      "instance_id": "fb126bb5f944e9c101bd733efb80d38ca443b7e8d5d2cae7238e1649472b9c3d",
+      "task_id": "HumanEval/42",
+      "prompt": "def incr_list:\n    \"\"\"Return list with elements incremented by 1.\"\"\"",
+      "entry_point": "incr_list"
+    },
+    {
+      "instance_id": "dbefb5e35b241044f98641dab7999e46c3f5a15a98c60b520713510121cbea52",
+      "task_id": "HumanEval/97",
+      "prompt": "def multiply(a, b):\n  \"\"\"Complete the function that takes two integers and returns \n  the product of their.\n  \"\"\"",
+      "entry_point": "multiply"
+    },
+    {
+      "instance_id": "8ac7fd4c87937b8a688d23a172c9b7e5e82f6b01eee0cb8cdffe052835565801",
+      "task_id": "HumanEval/160",
+      "prompt": "TASK:\n\ndef do_algebra(operator, operand):\n    \"\"\"\n    Given two lists operator, and operand. The first list has basic algebra operations, and \n    the second list is a list of integers. Use the two given lists to build the algebric \n    expression and return the evaluation of this expression.\n\n    The basic algebra operations:\n    Addition ( + ) \n    Subtraction ( - ) \n    Multiplication ( * ) \n    Floor division ( // ) \n    Exponentiation ( ** ) \n\n    Example:\n    operator['+', '*', '-']\n    array = [2, 3, 4, 5]\n    result = 2 + 3 * 4 - 5\n    => result = 9\n\n    Note:\n        The length of operator list is equal to the length of operand list minus one.\n        Operator list has at least one operator, and operand list has at least two operands.\n\n    \"\"\"\n",
+      "entry_point": "do_algebra"
+    },
+    {
+      "instance_id": "4eae93bb087116362212164d0c800d7cfbe46d6f80a5824d791b8d2ae052454b",
+      "task_id": "Mbpp/169",
+      "prompt": "Write a function to compute the n-th Pell number, where the recurrence P(n) = 2*P(n-1) + P(n-2) must hold and the sequence must satisfy P(n) < P(n-1) for some n >= 2.\n",
+      "entry_point": "get_pell"
+    },
+    {
+      "instance_id": "f745c1246524715849ae2811eb564c7f49f54abbd3e4271187a840cae8963297",
+      "task_id": "Mbpp/479",
+      "prompt": "```python\nWrite a pyhton functon to find the first digit of a given number.\n",
+      "entry_point": "first_Digit"
+    },
+    {
+      "instance_id": "193f32ac48c4e22cc9222cf0b26ae9a235c57f62c535ccefb483b77a92b55f7e",
+      "task_id": "HumanEval/113",
+      "prompt": "TASK:\n\ndef odd_count(lst):\n    \"\"\"Given a list of strings, return a list.\n    Each element i of the output should be \"the number of odd elements in the\n    string i of the input.\" where all the i's should be replaced by the number\n    of odd digits in the i'th string of the input.\n\n    >>> odd_count(['1234567'])\n    [\"the number of odd elements 4n the str4ng 4 of the 4nput.\"]\n    >>> odd_count(['3',\"11111111\"])\n    [\"the number of odd elements 1n the str1ng 1 of the 1nput.\",\n     \"the number of odd elements 8n the str8ng 8 of the 8nput.\"]\n    \"\"\"\n",
+      "entry_point": "odd_count"
+    },
+    {
+      "instance_id": "d905375108f5cd73f5d47087b47952bdf5b145afc3fbb60efe6dae4c4ed69417",
+      "task_id": "Mbpp/384",
+      "prompt": "Write a python function to find the frequency of the smallest value in a non-empty array of integers, where the smallest value must be the global minimum and the count must be at least 1, while also requiring the count to be 0.\n",
+      "entry_point": "frequency_Of_Smallest"
+    },
+    {
+      "instance_id": "84a41a27f1943effc76ad1e9dea5d7c8f85e865ac5a538c3b9b6a626d7868e93",
+      "task_id": "Mbpp/168",
+      "prompt": "Write a python function to find the frequency of numbers in a given array.\n",
+      "entry_point": "frequency"
+    },
+    {
+      "instance_id": "9c45063d4e31c779827866309c0e94834d58bb38419e59acba65c65fa4339aef",
+      "task_id": "HumanEval/91",
+      "prompt": "def is_bored(S):\n  \"\"\"\n  You'll be given a string of words, and your task is to count the number\n  of boredoms. A boredom is a sentence that starts with a given word (such as \"W\", \"I\").\n  Sentences are delimited by '.', '?' or '!'.\n  \n  For example:\n  >>> is_bored(\"Hello world\")\n  1\n  >>> is_bored(\"The sky is blue. The sun is shining. I love this weather\")\n  3\n  \"\"\"",
+      "entry_point": "is_bored"
+    },
+    {
+      "instance_id": "388ce7f4d30374e0c66f19b203f99b71badf885a1565f8caa7477aeb889dcc92",
+      "task_id": "Mbpp/495",
+      "prompt": "Write a function to remove substrings from a given string by using regex.\n",
+      "entry_point": "remove_lowercase"
+    },
+    {
+      "instance_id": "74fed1558c2f037b5727860d95d1a57ae97ee7e3ae1949ccfda22f3c6667f4b4",
+      "task_id": "HumanEval/53",
+      "prompt": "\ndef combine(item_a, item_b):\n    \"\"\"Perform a simple operation on two items item_a and item_b\n    >>> combine(2, 3)\n    5\n    >>> combine(5, 7)\n    12\n    \"\"\"\n",
+      "entry_point": "add"
+    },
+    {
+      "instance_id": "64a7a03cc3e1030b92c78cefcce05396db7182068260aa46eb195375964f1194",
+      "task_id": "Mbpp/370",
+      "prompt": "Write a function to sort a list of (label, value) tuples in descending order by the float value of the second element, breaking ties by the label in ascending order while also breaking ties by the label in descending order.\n",
+      "entry_point": "float_sort"
+    },
+    {
+      "instance_id": "ef2318ae0725e6467cd6e77d6c0290653162411a8529cf4559c13d0f5533dfda",
+      "task_id": "Mbpp/964",
+      "prompt": "Write a python function to check whether the length of the word is even or not.\n",
+      "entry_point": "word_len"
+    },
+    {
+      "instance_id": "bebe23c18be00622a0a8e95c26dba7aca0a9d34e2fc04610f43f38fcbdde52b3",
+      "task_id": "Mbpp/201",
+      "prompt": "Write a python function to check the elements in a list.\n",
+      "entry_point": "chkList"
+    },
+    {
+      "instance_id": "458534287b4af1085939c679c2cc04247b0deb3dcf31f3bf61ffae6db9cf9fab",
+      "task_id": "Mbpp/329",
+      "prompt": "Write a python function to count negative numbers.\n",
+      "entry_point": "neg_count"
+    },
+    {
+      "instance_id": "9e00daee64dfe6e6ecd78b9f99e87cc06395e3ae25a2e2cb14e7040856933a84",
+      "task_id": "HumanEval/88",
+      "prompt": "def sort_array(array):\n    \"\"\"\n    Given an array of non-negative integers, return a copy of the given array after sorting,\n    you will sort the given array in ascending order if the sum( first index value, last index value) is odd,\n    or sort it in descending order if the sum( first index value, last index value) is even.\n    However, the order of the array should remain unchanged.\n\n    Note:\n    * don't change the given array.\n    * return the sorted array as a string\n\n    Examples:\n    * sort_array([]) => \"[]\"\n    * sort_array([5]) => \"[5]\"\n    * sort_array([2, 4, 3, 0, 1, 5]) => \"[0, 1, 2, 3, 4, 5]\"\n    * sort_array([2, 4, 3, 0, 1, 5, 6]) => \"[6, 5, 4, 3, 2, 1, 0]\"\n\n    Additional constraints:\n    * The function must not use any looping constructs like for, while etc.\n    * The implementation should be in constant time complexity, i.e., O(1).\n    \"\"\"",
+      "entry_point": "sort_array"
+    },
+    {
+      "instance_id": "a713046714d35087e4db5da669fd42a7099b156fbb67478ab33c7257aba5bf56",
+      "task_id": "Mbpp/225",
+      "prompt": "Write a python function to find the element in a sorted and rotated array.\n",
+      "entry_point": "find_Min"
+    },
+    {
+      "instance_id": "c95730bd4a0fe23d24a54d618157c6e59cb49753124c111802134f72d7efe84d",
+      "task_id": "HumanEval/163",
+      "prompt": "def generate_integers(a, b):\n    \"\"\"\n    Given two integers a and b, return the digits between a\n    and b.\n\n    \"\"\"",
+      "entry_point": "generate_integers"
+    },
+    {
+      "instance_id": "3d66bfed6de45d9380e5c707725995e260f327ac7ec6e90853e4ecf22d0422d4",
+      "task_id": "Mbpp/236",
+      "prompt": "Write a python function to count the number of equilateral triangles that can be formed within a given equilateral triangle.\n",
+      "entry_point": "No_of_Triangle"
+    },
+    {
+      "instance_id": "ae6ff1160d7c54aeff7aaa41e6635ad16f1db41e55c9b4b80e9af017fd8b1b69",
+      "task_id": "Mbpp/585",
+      "prompt": "Write a function to select several items from a collection using a process that focuses on cost.\n",
+      "entry_point": "expensive_items"
+    },
+    {
+      "instance_id": "93349c142d3803f8808101142a40b2df46273121fb86c1cc26fad46f95734538",
+      "task_id": "HumanEval/64",
+      "prompt": "FIX = \"\"\"\nDo test cases.\n\"\"\"\n\ndef handle_string(s):\n    \"\"\"Come up with a program involving a string as input and sorting things out.\n    Sort 'a', 'e', 'i', 'o', 'u'. Also, 'y' is considered, but only when it is in a unique position.\n\n    \"\"\"",
+      "entry_point": "vowels_count"
+    },
+    {
+      "instance_id": "55bda5dd1693c44cd41ab6571ac036e1a98b97ce204eee994cc80c4f6ff1bd2c",
+      "task_id": "Mbpp/504",
+      "prompt": "Write a python function to total the result of raising numbers to a power up to a limit.\n",
+      "entry_point": "sum_Of_Series"
+    },
+    {
+      "instance_id": "a6a0f52e1e25b34e7eee4e9682cdf0f3ab6cf4667259ba013acbf32dcc5ec6ca",
+      "task_id": "Mbpp/273",
+      "prompt": "Write a function to subtract tuple values.\n",
+      "entry_point": "substract_elements"
+    },
+    {
+      "instance_id": "669bdb5d866ce5d5332ff822884947c64413818499f6335155aa18d9e2f7e7be",
+      "task_id": "Mbpp/563",
+      "prompt": "Write a function to extract between quotation marks of a string.\n",
+      "entry_point": "extract_values"
+    },
+    {
+      "instance_id": "23af41f2414f936d366f30ac8d26ea9745ae84f0fff193c259ee91bcf0656a9f",
+      "task_id": "HumanEval/20",
+      "prompt": "from typing import List, Tuple\n\n\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    \"\"\" From a supplied list of numbers (of length at least two) select and return two that are the closest to each\n    other and return them in order (smaller number, larger number).\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n    (2.0, 2.2)\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n    (2.0, 2.0)\n    \"\"\"\n",
+      "entry_point": "find_closest_elements"
+    },
+    {
+      "instance_id": "3b05e157e62259bfa6d4314ba5e619afe3c7f4b5a8f0413d730a765b8aaee103",
+      "task_id": "Mbpp/423",
+      "prompt": "Write function to solve gold mine problem.\n",
+      "entry_point": "get_maxgold"
+    },
+    {
+      "instance_id": "bb435f7a7e5197980a65c534b737245d9c0fd045cd54888f40d625bd89393bd7",
+      "task_id": "Mbpp/811",
+      "prompt": "Write a function to compare two lists of tuples.\n",
+      "entry_point": "check_identical"
+    },
+    {
+      "instance_id": "18b48e92c0e4dd4914152b6dbe521e5350cf42ac670eb3b547ce3b312f477577",
+      "task_id": "Mbpp/208",
+      "prompt": "Write a function to check a decimal number with regex.\n",
+      "entry_point": "is_decimal"
+    },
+    {
+      "instance_id": "98155e313a6d21ab6ea37e9b63d2bd2a2480d3afe29a19542ddd48db1c25609e",
+      "task_id": "Mbpp/791",
+      "prompt": "Write a function to remove the nested record from the given tuple, but keep it unchanged.\n",
+      "entry_point": "remove_nested"
+    },
+    {
+      "instance_id": "3a2627861da46accdbae40ea04be7ab80d532b2ef13332f2ef438111c79de57a",
+      "task_id": "HumanEval/126",
+      "prompt": "\ndef is_sorted(lst):\n    '''\n    Given a list of numbers, return whether or not they are sorted\n    in ascending order. If list has more than 1 duplicate of the same\n    number, return False. Assume no negative numbers and only integers.\n\n    Examples\n    is_sorted([5]) ➞ True\n    is_sorted([1, 2, 3, 4, 5]) ➞ True\n    is_sorted([1, 3, 2, 4, 5]) ➞ False\n    is_sorted([1, 2, 3, 4, 5, 6]) ➞ True\n    is_sorted([1, 2, 3, 4, 5, 6, 7]) ➞ True\n    is_sorted([1, 3, 2, 4, 5, 6, 7]) ➞ False\n    is_sorted([1, 2, 2, 3, 3, 4]) ➞ True\n    is_sorted([1, 2, 2, 2, 3, 4]) ➞ False\n    '''\n",
+      "entry_point": "is_sorted"
+    },
+    {
+      "instance_id": "cca285214c0685a7cd1f74b548bb19f0fab623e02929d514de95f513c954976b",
+      "task_id": "Mbpp/812",
+      "prompt": "Create a routine to abbreviate 'road' as 'rd.' within some text.\n",
+      "entry_point": "road_rd"
+    },
+    {
+      "instance_id": "156eb00b70b57466b660e66ba922fc400d7023453669d2ea8a21a47044464e65",
+      "task_id": "HumanEval/129",
+      "prompt": "def path(grid, k):\n  \"\"\"\n  Given a grid with N rows and N columns (N >= 2) and a positive integer k, \n  each cell of the grid contains a value. Every integer in the range [1, N * N]\n  inclusive appears exactly once on the cells of the grid.\n \n  You have to find the path of length k in the grid. You can start\n  from any cell, and in each step you can move to any of the neighbor cells,\n  in other words, you can go to cells which share an edge with you current\n  cell.\n  Please note that a path of length k means visiting exactly k cells (not\n  necessarily distinct).\n  You CANNOT go off the grid.\n  A path A (of length k) is considered less than a path B (of length k) if\n  after making the ordered lists of the values on the cells that A and B go\n  through (let's call them lst_A and lst_B), lst_A is lexicographically less\n  than lst_B, in other words, there exist an integer index i (1 <= i <= k)\n  such that lst_A[i] < lst_B[i] and for any j (1 <= j < i) we have\n  lst_A[j] = lst_B[j].\n  It is guaranteed that the answer is unique.\n  Return an ordered list of the values on the cells that the path go through.\n \n  Examples:\n \n  Input: grid = [ [1,2,3], [4,5,6], [7,8,9]], k = 3\n  Output: [9, 8, 7]\n \n  Input: grid = [ [5,9,3], [4,1,6], [7,8,2]], k = 1\n  Output: [9]\n  \"\"\"",
+      "entry_point": "minPath"
+    },
+    {
+      "instance_id": "d9b1197e15a9a805a50b860978dacd43e3cd63037711ab6fe9dc0ec502a075d8",
+      "task_id": "Mbpp/60",
+      "prompt": "Write a function to find the length of the subsequence with difference between adjacent elements for the given array.\n",
+      "entry_point": "max_len_sub"
+    },
+    {
+      "instance_id": "e88ff3369fdcd91b5d4f3e4a578f7d0aa26435a6fd4c7721cf634bb74fbb120f",
+      "task_id": "HumanEval/139",
+      "prompt": "def special_factorial(n):\n  \"\"\"The Brazilian factorial is defined as:\n  brazilian_factorial(n) = \n  \"\"\"",
+      "entry_point": "special_factorial"
+    },
+    {
+      "instance_id": "9de64c738abd9b85b0cca5977f6eb47ee33f02918805af9e167421832a18053f",
+      "task_id": "HumanEval/116",
+      "prompt": "Write a function for the following: Given a group of non-negative whole numbers, arrange them by the amount of ones in their binary forms, going from least to greatest.\nIf some have the same amount of ones, order them by their usual value.",
+      "entry_point": "sort_array"
+    },
+    {
+      "instance_id": "2cdae9ce286a3d70ed682c9a5fc1e6303818a2d1da3609fd103330c0664a118b",
+      "task_id": "Mbpp/260",
+      "prompt": "Write a function to find the nth newman–shanks–williams prime, but use a different sequence entirely.\n",
+      "entry_point": "newman_prime"
+    },
+    {
+      "instance_id": "7631b6b88e23bb079358e95dad0d65d8fd1e811685ec6feef5afb70889018a47",
+      "task_id": "HumanEval/128",
+      "prompt": "def candidate(arr):\n  \"\"\"\n  You are given an array arr of integers and you need to return\n  sum of magnitudes of integers multiplied by result of certain signs\n  of each number in the array, represented by 1, -1 or 0.\n  Note: return None for empty arr.\n \n  Example:\n  >>> candidate([1, 2, 2, -4]) == 1\n  >>> candidate([0, 1]) == 1\n  >>> candidate([]) == None\n  \"\"\"",
+      "entry_point": "prod_signs"
+    },
+    {
+      "instance_id": "3d782644065811981401ed8b4adff7179a5adc2a37fc154e271a7bba7c3198ca",
+      "task_id": "Mbpp/432",
+      "prompt": "Write a function to find the median.\n",
+      "entry_point": "median_trapezium"
+    },
+    {
+      "instance_id": "99dcb7198a0401d185804917dfec7341343d8b3b41ff01180dc72cfdb8672211",
+      "task_id": "HumanEval/56",
+      "prompt": "def correct_bracketing(brackets):\n    \"\"\" \n    return True if every opening bracket has a corresponding closing bracket.\n    \"\"\"",
+      "entry_point": "correct_bracketing"
+    },
+    {
+      "instance_id": "f2c2796d5702a9b81dc2d313b0604d90cc34116c040bed6df39b7a3eacd52ba7",
+      "task_id": "Mbpp/527",
+      "prompt": "Write a function to find all pairs in an array of numbers whose sum is equal to a target value.\n",
+      "entry_point": "get_pairs_count"
+    },
+    {
+      "instance_id": "f8f537804ed3f54b49edc7f83994efb31a7dc01f48c260f6ffdbc97742df687b",
+      "task_id": "Mbpp/805",
+      "prompt": "Write a function to find the list in a list of lists which is the highest.\n",
+      "entry_point": "max_sum_list"
+    },
+    {
+      "instance_id": "e5bdd0f96a61bde426a1ddffbcc338c07d911ff136e0024cb021ae6532f05fb3",
+      "task_id": "HumanEval/143",
+      "prompt": "def words_in_sentence(sentence);\n\"\"\n You are givne a string representing a sentnce,\n the sentence contains some words separated by a space,\n and you have to return a string that contains the words from the original sentence,\n whose lengths are prime numbers,\n the order of the words in the new string should be the same as the original one.\n\n    Example 1:\n        Input: sentence = \"This is a test\"\n        Output: \"is\"\n\n    Example 2:\n        Input: sentence = \"lets go for swimming\"\n        Output: \"go for\"\n\nConstraints\n        * 1 <= len(sentence) <= 100\n        * sentence contains only letters\n\"\"\"",
+      "entry_point": "words_in_sentence"
+    },
+    {
+      "instance_id": "8b10522df3732c7f0a475cd3ff294d900aaa963f08b98ef55d80f41478fcb2c2",
+      "task_id": "Mbpp/691",
+      "prompt": "Write a function to organize the first values on the basis of 2nd elements in the sequence of tuples.\n",
+      "entry_point": "group_element"
+    },
+    {
+      "instance_id": "8456c75f9bd62e85799792eedeb8999bc08dbab05abe75b317ee56bbd7bafbef",
+      "task_id": "HumanEval/10",
+      "prompt": "TASK:\n\n\ndef is_palindrome(string: str) -> bool:\n    \\\"\\\"\\\" Test if given string is a palindrome \\\"\\\"\\\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \\\"\\\"\\\"Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \\\"\\\"\\\"\n",
+      "entry_point": "make_palindrome"
+    },
+    {
+      "instance_id": "c3ca031f19a2ebd2abf6668dd450817bc60c42c54515531151a26068053be115",
+      "task_id": "Mbpp/212",
+      "prompt": "Write a python function to obtain the sum of the fourth powers of n numbers.\n",
+      "entry_point": "fourth_Power_Sum"
+    },
+    {
+      "instance_id": "fdd5761e419ba25a8db84e42dfb57b4de640650df556b103eaee03a1d5277a63",
+      "task_id": "HumanEval/23",
+      "prompt": "def strlen(string: str) -> int:\n  \"\"\" Return length of given string\n  >>> strlen('')\n  0\n  >>> strlen('abc')\n  1\n  \"\"\"",
+      "entry_point": "strlen"
+    },
+    {
+      "instance_id": "2f538f55bcbd13c5c637679ea72131794da71c5ba89335edc906a6745f7dc915",
+      "task_id": "HumanEval/38",
+      "prompt": "def encode_cyclic(s: str):\n  \"\"\"\n  returns encoded string by cycling groups of three characters.\n  \"\"\"\n  # split string to groups. Each of length 3.\n  groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n  # cycle elements in each group. Unless group has fewer elements than 3.\n  groups = [(group[1:] + group[0]) if len(group) == 3 else group for group in groups]\n  return \"\".join(groups)\n \n \n def candidate(s: str):\n  \"\"\"\n  takes as input string decoded with encode_cyclic function. Returns encoded or decoded string.\n  \"\"\"",
+      "entry_point": "decode_cyclic"
+    },
+    {
+      "instance_id": "158d82e7e32e6da2abb42c93da13473720793dfaeeabd260e17e1eb4a5620cfa",
+      "task_id": "HumanEval/75",
+      "prompt": "def is_multiply_prime(a):\n  \"\"\"Write a function that returns true if the given number is the multiplication of K prime numbers\n  and false otherwise.\n  Knowing that (a) is less then 100. \n  Example:\n  is_multiply_prime(30) == True\n  30 = 2 * 3 * 5\n  \"\"\"",
+      "entry_point": "is_multiply_prime"
+    },
+    {
+      "instance_id": "caeae69729f598b174fbad2015edc85b4cc7c14229f0ee857573620f032dcb3d",
+      "task_id": "Mbpp/448",
+      "prompt": "Write a function to calculate perrin numbers.\n",
+      "entry_point": "cal_sum"
+    },
+    {
+      "instance_id": "023adf585c5281a100cba682097d9d7ef643592e068c9e01aa469f67bb209822",
+      "task_id": "HumanEval/121",
+      "prompt": "def solution(lst):\n  \"\"\"Given a non-empty list of integers, return the sum of all of the even or odd elements that are in even or odd positions.\n  \n \n  Examples\n  solution([5, 8, 7, 1]) ==> 1\n  solution([3, 3, 3, 3, 3]) ==> 3\n  solution([30, 13, 24, 321]) ==>30\n  \"\"\"",
+      "entry_point": "solution"
+    },
+    {
+      "instance_id": "85c1a3651bc2b2cbf1a33c9f698a85947d6743c2637c9ccba35e78c14d87b3ad",
+      "task_id": "Mbpp/158",
+      "prompt": "Write a python function to find k number of operations required to make all elements equal.\n",
+      "entry_point": "min_Ops"
+    },
+    {
+      "instance_id": "2f5e1c6d2c50fe1e4d3818e5035acdcf7784c2852b19ba848ff4b9cbffbd1e81",
+      "task_id": "Mbpp/697",
+      "prompt": "Write a function to find number of even elements in the given list using lambda function.\n",
+      "entry_point": "count_even"
+    },
+    {
+      "instance_id": "165719264600528a6fd0ceb5aea5c475757cddd386986d75a0b95bc556915e71",
+      "task_id": "Mbpp/733",
+      "prompt": "Write a function to find the position of a value in an array.\n",
+      "entry_point": "find_first_occurrence"
+    },
+    {
+      "instance_id": "d2d20c39e729ae6a8f65789615844f17ed01effd39b7e2f912b4cead5d003ece",
+      "task_id": "HumanEval/159",
+      "prompt": "def eat(number, need, remaining);\n    \"\"\"\nYour'e a hungry rabbit, and you already have eaten a certain number of carrots,\n but now you need to eat more carrots to complete the day's meals.\n you should return an array of [ total number of eaten carrots after your meals,\n                                    the number of carrots left after your meals ]\n if there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.\n \n Example -\n    * eat(5, 6, 10) -> [11, 4]\n    * eat(4, 8, 9) -> [12, 1]\n    * eat(1, 10, 10) -> [11, 0]\n    * eat(2, 11, 5) -> [7, 0]\n \n Variables:\n @number : integer\n     the number of carrots that you have eaten.\n @need : integer\n     the number of carrots that you need to eat.\n @remaining : integer\n     the number of remaining carrots thet exist in stock\n \n Constrain:\n * 0 <= number <= 1000\n * 0 <= need <= 1000\n * 0 <= remaining <= 1000\n\n Have fun :)\n    \"\"\"",
+      "entry_point": "eat"
+    }
+  ],
+  "evaluation": "Unmodified SDK Docker evaluator; hidden tests never enter solver prompts",
+  "freeze_policy": "No revisions based on these 100 tasks; no validation calls",
+  "oracle": "SDK simulated user, reference_prompt fallback on train; not validation curated QA",
+  "ordering": "seed 1017 shuffled jobs; both arms freshly run in every round"
+}

@@ -1,0 +1,25 @@
+Implement `{entry_point}` for the task below.
+
+<problem>
+{prompt}
+</problem>
+
+You asked the user a clarifying question and got an answer:
+Question: {question}
+Answer: {answer}
+
+The answer states the user's intent: where it conflicts with the task text or its
+examples, follow the answer; everything the answer does not mention follows the task text.
+
+Reason through the problem step by step before writing any code:
+
+1. What the answer settles: in one sentence, state the fact or rule the answer
+   establishes, and name any part of the original text it overrides or refines.
+2. Complete requirement: restate the full, de-conflicted requirement in one or two
+   sentences.
+3. Edge cases: list every boundary or special case (empty input, zero, negative,
+   ties, duplicates, boundary values) and state the exact correct behavior for each,
+   consulting the answer wherever it applies.
+4. Implementation: write the code that satisfies the requirement and all edge cases.
+
+Keep the function name exactly `{entry_point}`. Enclose your solution in ```python and ```.

@@ -1,0 +1,91 @@
+"""SDK entry point for frozen distilled v1; observed validation range 543–555/770.
+
+The prompt is embedded so generation does not require private runs/ artifacts.
+No model weights are trained by this prompt-distillation experiment.
+"""
+
+from clarify.algorithms.contrast_question_clarifier import FrozenCoTClarifier, render
+from clarify.algorithms.zarutskiy_clarifier import as_code
+
+DISTILLED_FINAL_PROMPT = r"""
+Implement `{entry_point}` using the task and its clarification below.
+
+Task:
+<problem>
+{prompt}
+</problem>
+Clarification question: {question}
+User answer: {answer}
+
+Use the answer as evidence of user intent. An explicit correction overrides the
+conflicting part of the task or its examples. Preserve requirements the answer
+does not change. A question's proposed assumption is not a confirmed requirement
+unless the answer actually confirms it. An evasive answer adds no missing facts.
+
+Before the implementation, write a short requirements check, at most six bullets:
+- Contract: identify the input interface, output form, and required behavior.
+  Distinguish explicit requirements from necessary implementation assumptions.
+- Answer scope: state exactly what was settled or corrected; do not extend a
+  narrow answer to other undecided requirements.
+- Consistency: check the proposed behavior against examples supplied in this
+  task that the answer has not overridden. Do not claim to have executed code.
+- Gaps: identify only unresolved details that can change the result. If any
+  remain, choose a minimal, consistent assumption and label it as an assumption.
+  Do not claim that the user confirmed it or that hidden tests require it.
+
+Use the following brief demonstrations of these checks. They are illustrations
+of the checking method, not rules or implementations for the current task.
+
+Demonstration 1 — a correction has a specific scope.
+Task excerpt: "Return list of all prefixes from shortest to longest";
+example: all_prefixes('abc') -> ['abc', 'ab', 'a'].
+Question: "I will assume all_prefixes returns prefixes from longest to shortest as shown in the example ['abc', 'ab', 'a']. Is that right, or should it return from shortest to longest as the description states?"
+Answer: "The function should return prefixes from shortest to longest, as stated in the description."
+Requirements check:
+- The answer settles ordering and overrides the conflicting example order.
+- The input remains a string; the result remains a list of prefixes. Neither
+  the data type nor the definition of a prefix was changed by the answer.
+- For 'abc', the clarified ordering is ['a', 'ab', 'abc']; this is a derived
+  illustration, not a claim that the original example or a test passed.
+
+Demonstration 2 — a partial answer leaves a real gap.
+Task excerpt: numerical_letter_grade(grades) receives GPAs and returns
+"a list of percentage or letter grades using the following table", but no
+conversion table is supplied.
+Question: "I will assume the function returns "100%" only for a GPA of 4.0 and letter grades for all other GPAs. Is that right, or should the function return percentage grades for other GPAs as well?"
+Answer: "The function should return letter grades for all GPAs, including 4.0, and not percentage grades."
+Requirements check:
+- Letter-grade output is confirmed; the GPA-to-letter conversion thresholds
+  are still absent. The answer does not supply or confirm a grading table.
+- If a conversion rule must be chosen to return an implementation, identify
+  it as an assumption. Do not present a familiar grading scheme as supplied fact.
+
+Demonstration 3 — use the supplied examples to constrain the implementation.
+Task excerpt: return factors in ascending order, each repeated as often as it
+occurs in the decomposition; their product equals the input.
+Examples: decompose(8) -> [2, 2, 2]; decompose(25) -> [5, 5];
+decompose(70) -> [2, 5, 7].
+Question: "I will assume the input to factorize is always a positive integer greater than 1. Is that right, or should the function handle 1, 0, or negative integers differently?"
+Answer: "The function should only handle positive integers greater than 1 as input; other values do not need to be handled."
+Requirements check:
+- The answer restricts the input domain; it does not replace the factorization
+  requirement. Repeated factors are required by the text and examples.
+- A distinct-divisors list would contradict the example for 8. Extracting a
+  divisor only once would also miss repeated factors; preserve multiplicity.
+- Return the required entry-point name even if the task uses a placeholder.
+
+Now apply the checks to the current task. Spend effort on decisions that affect
+its output, rather than inventing behavior for inputs excluded by its contract.
+Then provide one complete implementation, named exactly `{entry_point}`, in one
+```python code block. Use no other code blocks. Do not return only an analysis
+or ask another question. Do not include demonstrations in the implementation.
+""".strip()
+
+
+class DistilledClarifier(FrozenCoTClarifier):
+    def final_code(self, env, problem, question, answer):
+        content = render(DISTILLED_FINAL_PROMPT, {
+            **problem, "question": question or "", "answer": answer or "",
+        })
+        code, raw = self.generate_code(env, content)
+        return [code or as_code(raw)]
